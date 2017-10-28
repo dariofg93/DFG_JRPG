@@ -470,10 +470,10 @@ GameObject:
   m_Component:
   - component: {fileID: 901250579}
   - component: {fileID: 901250578}
-  - component: {fileID: 901250580}
+  - component: {fileID: 901250581}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -536,7 +536,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &901250580
+--- !u!114 &901250581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -544,11 +544,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 901250577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f98a794fc705648b4d5ee47815ae14, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b2ced164c1750e468aa23b72501df7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nick: Lucas
-  life: 75
+  life: 50
   mana: 15
   currentLife: 0
   currentMana: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   magicalAttacks:
   - {fileID: 1242020752721736, guid: 65e178fb9c0752644af3818a425d53c6, type: 2}
   - {fileID: 1259403119279454, guid: 27ce524438803b8459d24bd760a36f72, type: 2}
-  inventory:
+  especial:
   - {fileID: 1252674540822546, guid: ec2d8af227d55174e84cd4570fb30f8c, type: 2}
 --- !u!1 &1147421369
 GameObject:
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567216573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca7113af11e3714397e775ee77e3e92, type: 3}
+  m_Script: {fileID: 11500000, guid: d28f46dd5aff7444cb9127d58fec4549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!102 &1567216576
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 1664815472}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,11 +1284,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1727287005}
   - component: {fileID: 1727287004}
-  - component: {fileID: 1727287006}
-  - component: {fileID: 1727287007}
+  - component: {fileID: 1727287008}
   m_Layer: 0
   m_Name: Partner
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1351,7 +1350,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1727287006
+--- !u!114 &1727287008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1359,12 +1358,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1727287003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f98a794fc705648b4d5ee47815ae14, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b2ced164c1750e468aa23b72501df7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nick: Wolfer
-  life: 25
-  mana: 30
+  life: 35
+  mana: 25
   currentLife: 0
   currentMana: 0
   attack: 0
@@ -1377,22 +1376,8 @@ MonoBehaviour:
   - {fileID: 1181431367273558, guid: 0c80d2ccc61516842a3dda0542ed7d53, type: 2}
   magicalAttacks:
   - {fileID: 1409526711977376, guid: d53fe9965c44e9445b5ff0c8f56ec336, type: 2}
-  inventory:
+  especial:
   - {fileID: 1541772091708582, guid: 9d1173a9de4e384408a617c72516dc86, type: 2}
---- !u!114 &1727287007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1727287003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cccdb5e182aeef419cc6642b8481932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pj: {fileID: 0}
-  pos: 0
-  isOptions: 0
 --- !u!1 &1846380141
 GameObject:
   m_ObjectHideFlags: 0

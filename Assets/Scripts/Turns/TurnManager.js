@@ -13,10 +13,10 @@ function Start () {
 
 function Update () {
 
-	if(mutex){
+	if(mutex && !Statics.playerIsDead() && !Statics.enemiesAreDead()){
 		mutex = false;
 		initPjs();
-		var pj = pjs.shift();
+		var pj = firstUndeadPj();
 
 		if(Statics.arrayContains(Statics.findPlayers(),pj)){
 
@@ -28,6 +28,14 @@ function Update () {
 			enemyAttack.GetComponent(EnemiesController).enemy = pj;
 		}
 	}
+
+	if(Statics.playerIsDead()){
+		Debug.Log("Fracasado");
+	}
+
+	if(Statics.enemiesAreDead()){
+		Debug.Log("Aguante River");
+	}
 }
 
 function initPjs(): Array {
@@ -35,19 +43,19 @@ function initPjs(): Array {
 
 		var foundPlayers = Statics.findPlayers();
 		foundPlayers.sort(function(a: GameObject, b: GameObject){
-			return b.GetComponent(StatsPlayer).velocity - a.GetComponent(StatsPlayer).velocity;
+			return b.GetComponent(Stats).velocity - a.GetComponent(Stats).velocity;
 		});
 
 		var foundEnemies = Statics.findEnemies();
 		foundEnemies.sort(function(a: GameObject, b: GameObject){
-			return b.GetComponent(StatsEnemy).velocity - a.GetComponent(StatsEnemy).velocity;
+			return b.GetComponent(Stats).velocity - a.GetComponent(Stats).velocity;
 		});
 
 		while(foundPlayers.length > 0 && foundEnemies.length > 0){
 			var pj: GameObject = foundPlayers[0];
 			var enemy: GameObject = foundEnemies[0];
 
-			if(pj.GetComponent(StatsPlayer).velocity > enemy.GetComponent(StatsEnemy).velocity){
+			if(pj.GetComponent(Stats).velocity > enemy.GetComponent(Stats).velocity){
 				pjs.push(foundPlayers.shift());
 			}else{
 				pjs.push(foundEnemies.shift());
@@ -61,4 +69,14 @@ function initPjs(): Array {
 
 function next(){
 	mutex = true;
+}
+
+function firstUndeadPj(){
+	var pj: GameObject = pjs.shift();
+
+	while(pj.GetComponent(Stats).isDead()){
+		pj = pjs.shift();
+	}
+
+	return pj;
 }

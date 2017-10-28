@@ -36,3 +36,7 @@ function actions(pos): GameObject[]{
 function percentLife(): float{
 	return life * currentLife/100;
 }
+
+function isDead(): boolean{
+	return currentLife == 0;
+}

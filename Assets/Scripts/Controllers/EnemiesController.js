@@ -34,7 +34,7 @@ function Update () {
 }
 
 function atacar(){
-	var stats = enemies[0].GetComponent(StatsEnemy);
+	var stats = enemies[0].GetComponent(Stats);
 
 	if(stats.percentLife() < 30.0f && !spcialUsed){
 		spcialUsed = true;

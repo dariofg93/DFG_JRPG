@@ -1,11 +1,11 @@
 ﻿#pragma strict
 
 private var textMesh: TextMesh;
-private var stats: StatsEnemy;
+private var stats: Stats;
 
 function Start () {
 	textMesh = GetComponent(TextMesh);
-	stats = transform.parent.GetComponent(StatsEnemy);
+	stats = transform.parent.GetComponent(Stats);
 }
 
 function Update () {

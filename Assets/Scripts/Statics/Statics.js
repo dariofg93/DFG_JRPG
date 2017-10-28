@@ -16,15 +16,33 @@ public static function namesOfGameObjects(gameObjects: GameObject[]){
 }
 
 public static function findPlayers(): Array{
-	return [GameObject.Find("Player"),GameObject.Find("Partner")];
+	return GameObject.FindGameObjectsWithTag("Player");
 }
 
 public static function findEnemies(): Array{
-	return [GameObject.Find("Enemy")];
+	return GameObject.FindGameObjectsWithTag("Enemy");
 }
 
 public static function turnManager(): TurnManager{
 	return GameObject.Find("TurnManager").GetComponent(TurnManager);
+}
+
+public static function playerIsDead(): boolean{
+	return GameObject.Find("Player").GetComponent(Stats).isDead();
+}
+
+public static function enemiesAreDead(): boolean{
+	var condition = true;
+	var enemies = findEnemies();
+
+	for (var i = 0; i < enemies.length; i++) {
+		if(!enemies[i].GetComponent(Stats).isDead()){
+			condition = false;
+			break;
+		}
+	}
+
+	return condition;
 }
 
 public static function arrayContains(array: Array,elem){
@@ -38,9 +56,4 @@ public static function arrayContains(array: Array,elem){
 	}
 
 	return found;
-}
-
-//No se usa
-public static function turnManagerGameObject(){
-	return GameObject.Find("TurnManager");
 }

@@ -55,7 +55,7 @@ function Update () {
 		var actionsSelect = Statics.gameObjectOfChildByName(actionsGUI,"DialogSelect").GetComponent(CursorMovement);
 		if(actionsSelect.changedOption && !changedAction){
 			changedAction = true;
-			var action = pj.GetComponent(StatsPlayer).actions(pos)[actionsSelect.selected];
+			var action = pj.GetComponent(Stats).actions(pos)[actionsSelect.selected];
 
 			attack = Instantiate(action,pj.transform.position,pj.transform.rotation);
 
@@ -86,17 +86,21 @@ function invokeGUI(){
 									initPosZ * (-1)),
 									transform.rotation);
 
-	actionsGUI.GetComponent(DialogVariables).pj = pj;
-	actionsGUI.GetComponent(DialogVariables).pos = pos;
+	var variables = actionsGUI.GetComponent(DialogVariables);	
+	variables.pj = pj;
+	variables.pos = pos;
 
-	var textGUI = Statics.gameObjectOfChildByName(actionsGUI,"DialogTextGUI");
+	var textGUI = Statics.gameObjectOfChildByName(actionsGUI,"DialogTextGUI").GetComponent("TextMesh");
+	var namePj = "				" + pj.GetComponent(Stats).nick;
+
 		if(!dialog1Invoked){
-			textGUI.GetComponent("TextMesh").text = "Ataque" + "\n" + "Magia" + "\n" + "Inventario";
+			textGUI.text = namePj + "\n" + "Ataque" + "\n" + "Magia" + "\n" + "Inventario";
 			actionsGUI.GetComponent(DialogVariables).isOptions = true;
 		}
 		else{
-			var actions:GameObject[] = pj.GetComponent(StatsPlayer).actions(pos);
-			textGUI.GetComponent("TextMesh").text = Statics.namesOfGameObjects(actions).join("\n");
+			variables.playersController = gameObject;
+			var actions:GameObject[] = pj.GetComponent(Stats).actions(pos);
+			textGUI.text = namePj + "\n" + Statics.namesOfGameObjects(actions).join("\n");
 		}
 
 	initPosX += 1;
@@ -104,4 +108,17 @@ function invokeGUI(){
 	initPosZ += 1;
 
 	return actionsGUI;				
+}
+
+function deleteActionsGUI(){
+	Statics.gameObjectOfChildByName(optionsGUI,"DialogSelect").GetComponent(CursorMovement).changedOption = false;
+
+	Destroy(actionsGUI);
+	actionsGUI = null;
+	dialog2Invoked = false;
+	changedOption = false;
+
+	initPosX -= 1;
+	initPosY -= 1;
+	initPosZ -= 1;
 }
