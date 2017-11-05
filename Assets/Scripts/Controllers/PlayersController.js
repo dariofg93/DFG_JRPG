@@ -11,8 +11,6 @@ private var actionsGUI: GameObject;
 private var pos: int;
 private var attack: GameObject;
 
-public var pj: GameObject;
-
 //Variables necesarias para la creacion de dialogos.
 private var initPosX: float;
 private var initPosY: float;
@@ -20,6 +18,11 @@ private var initPosZ: float;
 
 //Prefab de dialogo
 public var dialog: GameObject;
+public var heal: GameObject;
+public var damage: GameObject;
+public var feedBackMana: GameObject;
+
+public var pj: GameObject;
 
 function Start () {
 	dialog1Invoked = false;
@@ -33,7 +36,7 @@ function Start () {
 }
 
 function Update () {
-	if(!dialog1Invoked){
+	if(!dialog1Invoked && Statics.introductionScreen() == null){
 		optionsGUI = invokeGUI();
 		dialog1Invoked = true;
 	}
@@ -54,16 +57,25 @@ function Update () {
 	if(actionsGUI != null){
 		var actionsSelect = Statics.gameObjectOfChildByName(actionsGUI,"DialogSelect").GetComponent(CursorMovement);
 		if(actionsSelect.changedOption && !changedAction){
-			changedAction = true;
+
 			var action = pj.GetComponent(Stats).actions(pos)[actionsSelect.selected];
 
-			attack = Instantiate(action,pj.transform.position,pj.transform.rotation);
+			if(Statics.hasEnoughMana(pj,action)){
+				changedAction = true;
+				attack = Instantiate(action,pj.transform.position,pj.transform.rotation);
 
-			if(attack.GetComponent(Attack) != null){
-				attack.GetComponent(Attack).enemy = Statics.findEnemies()[0];
-				attack.GetComponent(Attack).aggressor = pj;
+				if(attack.GetComponent(Attack) != null){
+					attack.GetComponent(Attack).enemy = Statics.findEnemies()[0];
+					attack.GetComponent(Attack).aggressor = pj;
+					attack.GetComponent(Attack).damagePrefab = damage;
+				}else{
+					attack.GetComponent(Defense).pj = pj;
+					attack.GetComponent(Defense).players = Statics.playersLive();
+					attack.GetComponent(Defense).healingPrefab = heal;
+				}
 			}else{
-				attack.GetComponent(Defense).players = Statics.findPlayers();
+				Instantiate(feedBackMana,pj.transform.position - new Vector3(0,0,1),pj.transform.rotation);
+				actionsSelect.changedOption = false;
 			}
 		}
 	}

@@ -51,3 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea75faf803c2764e94764fbccd141c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  heal: {fileID: 1514770967315104, guid: d0f9ca91da501b44eb67f0817a64275b, type: 2}
+  damage: {fileID: 1690539848087070, guid: 2d43dadaf77487642bb24e32348cdf6f, type: 2}

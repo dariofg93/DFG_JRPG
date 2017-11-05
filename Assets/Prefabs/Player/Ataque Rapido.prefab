@@ -57,6 +57,7 @@ MonoBehaviour:
   hitProbability: 100
   enemy: {fileID: 0}
   aggressor: {fileID: 0}
+  damagePrefab: {fileID: 0}
 --- !u!114 &114505050691409856
 MonoBehaviour:
   m_ObjectHideFlags: 1

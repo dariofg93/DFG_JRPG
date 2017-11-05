@@ -19,7 +19,6 @@ function Update () {
 		var pj = firstUndeadPj();
 
 		if(Statics.arrayContains(Statics.findPlayers(),pj)){
-
 			var pjAttack = Instantiate(playersController,transform.position,transform.rotation);
 			pjAttack.GetComponent(PlayersController).pj = pj;
 
@@ -27,14 +26,6 @@ function Update () {
 			var enemyAttack = Instantiate(enemiesController,transform.position,transform.rotation);
 			enemyAttack.GetComponent(EnemiesController).enemy = pj;
 		}
-	}
-
-	if(Statics.playerIsDead()){
-		Debug.Log("Fracasado");
-	}
-
-	if(Statics.enemiesAreDead()){
-		Debug.Log("Aguante River");
 	}
 }
 
@@ -75,6 +66,7 @@ function firstUndeadPj(){
 	var pj: GameObject = pjs.shift();
 
 	while(pj.GetComponent(Stats).isDead()){
+		initPjs();
 		pj = pjs.shift();
 	}
 

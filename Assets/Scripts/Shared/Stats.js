@@ -7,9 +7,7 @@ public var currentLife: int;
 public var currentMana: int;
 
 public var attack: int;
-public var magic: int;
-public var attackDefense: int;
-public var magicDefense: int;
+public var defense: int;
 public var velocity: int;
 
 private var gui: Hashtable = {};
@@ -39,4 +37,16 @@ function percentLife(): float{
 
 function isDead(): boolean{
 	return currentLife == 0;
+}
+
+function recibirDanio(danio: int):int {
+	var danioTotal = Mathf.Max(danio-defense,0);
+	currentLife = Mathf.Max(currentLife-danioTotal,0);
+
+	return danioTotal;
+}
+
+function recibirCura(cura: int):int{
+	currentLife = Mathf.Min(cura+currentLife,life);
+	return cura;
 }

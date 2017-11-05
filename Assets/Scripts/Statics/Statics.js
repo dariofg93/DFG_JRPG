@@ -15,6 +15,10 @@ public static function namesOfGameObjects(gameObjects: GameObject[]){
 	return names;
 }
 
+public static function fogSpawner(): GameObject{
+	return GameObject.Find("FogSpawner");
+}
+
 public static function findPlayers(): Array{
 	return GameObject.FindGameObjectsWithTag("Player");
 }
@@ -29,6 +33,19 @@ public static function turnManager(): TurnManager{
 
 public static function playerIsDead(): boolean{
 	return GameObject.Find("Player").GetComponent(Stats).isDead();
+}
+
+public static function playersLive(): Array{
+	var alives = new Array();
+	var players = findPlayers();
+
+	for (var i = 0; i < players.length; i++) {
+		if(!players[i].GetComponent(Stats).isDead()){
+			alives.push(players[i]);
+		}
+	}
+
+	return alives;
 }
 
 public static function enemiesAreDead(): boolean{
@@ -56,4 +73,26 @@ public static function arrayContains(array: Array,elem){
 	}
 
 	return found;
+}
+
+public static function hasEnoughMana(pj: GameObject, action: GameObject){
+	var totalCost: int;
+
+	if(action.GetComponent(Attack) != null){
+		totalCost = action.GetComponent(Attack).cost;
+	}
+
+	if(action.GetComponent(AttackMany) != null){
+		totalCost = action.GetComponent(AttackMany).cost;
+	}
+
+	if(action.GetComponent(Defense) != null){
+		totalCost = action.GetComponent(Defense).cost;
+	}
+
+	return pj.GetComponent(Stats).currentMana >= totalCost;
+}
+
+public static function introductionScreen(){
+	return GameObject.Find("IntroductionScreen");
 }

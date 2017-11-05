@@ -51,5 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f6e7235a6585742b0cc7afb56b4619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pj: {fileID: 0}
   dialog: {fileID: 1565665390231904, guid: 9f48608f18237144a8a8cbdbad73d59b, type: 2}
+  heal: {fileID: 1514770967315104, guid: d0f9ca91da501b44eb67f0817a64275b, type: 2}
+  damage: {fileID: 1690539848087070, guid: 2d43dadaf77487642bb24e32348cdf6f, type: 2}
+  feedBackMana: {fileID: 1996626709809532, guid: be780fae7f57e994983287889ffa1877,
+    type: 2}
+  pj: {fileID: 0}

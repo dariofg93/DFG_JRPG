@@ -10,6 +10,6 @@ function Start () {
 
 function Update () {
 	textMesh.text = stats.nick + "\n" +
-					"Vida: " + stats.life + "/" + stats.currentLife + "\n" +
-					"Mana: " + stats.mana + "/" + stats.currentMana;
+					"Vida: " + stats.currentLife + "/" + stats.life + "\n" +
+					"Mana: " + stats.currentMana + "/" + stats.mana;
 }
