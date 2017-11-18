@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1242020752721736}
+  m_RootGameObject: {fileID: 1866118133078510}
   m_IsPrefabParent: 1
---- !u!1 &1242020752721736
+--- !u!1 &1866118133078510
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4263257765874264}
-  - component: {fileID: 114265467301858200}
-  - component: {fileID: 114171782409461338}
+  - component: {fileID: 4662370438438410}
+  - component: {fileID: 114894419392605698}
+  - component: {fileID: 114212487999083460}
   m_Layer: 0
-  m_Name: PlayerMagic1
+  m_Name: Mordisco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4263257765874264
+--- !u!4 &4662370438438410
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1242020752721736}
+  m_GameObject: {fileID: 1866118133078510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,31 +41,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114171782409461338
+--- !u!114 &114212487999083460
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1242020752721736}
+  m_GameObject: {fileID: 1866118133078510}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9501e9ffad7e58840a1f34f4b0a2f1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 2
---- !u!114 &114265467301858200
+--- !u!114 &114894419392605698
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1242020752721736}
+  m_GameObject: {fileID: 1866118133078510}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe4dd093059627a4586d87adc5437b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
-  cost: 10
-  hitProbability: 75
+  damage: 6
+  cost: 0
+  hitProbability: 100
   enemy: {fileID: 0}
   aggressor: {fileID: 0}
+  damagePrefab: {fileID: 0}

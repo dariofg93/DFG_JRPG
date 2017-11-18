@@ -45,6 +45,7 @@ function atacar(){
 	var stats = enemy.GetComponent(Stats);
 
 	if(stats.percentLife() < 30.0f && !spcialUsed){
+		Debug.Log("Tira el especial gato");
 		spcialUsed = true;
 		return Instantiate(stats.actions(2)[0],enemies[0].transform.position,transform.rotation);
 	}else{

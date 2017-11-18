@@ -69,9 +69,9 @@ function Update () {
 					attack.GetComponent(Attack).aggressor = pj;
 					attack.GetComponent(Attack).damagePrefab = damage;
 				}else{
-					attack.GetComponent(Defense).pj = pj;
-					attack.GetComponent(Defense).players = Statics.playersLive();
-					attack.GetComponent(Defense).healingPrefab = heal;
+					attack.GetComponent(Healing).pj = pj;
+					attack.GetComponent(Healing).players = Statics.playersLive();
+					attack.GetComponent(Healing).healingPrefab = heal;
 				}
 			}else{
 				Instantiate(feedBackMana,pj.transform.position - new Vector3(0,0,1),pj.transform.rotation);

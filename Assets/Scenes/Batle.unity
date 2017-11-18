@@ -422,7 +422,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 362332541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.47, y: -1.63, z: -3}
+  m_LocalPosition: {x: -1.47, y: -1.63, z: -4}
   m_LocalScale: {x: 0.04, y: 0.016666668, z: 1}
   m_Children: []
   m_Father: {fileID: 901250579}
@@ -544,8 +544,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523704822}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &523704826
-Transform:
+--- !u!224 &523704826
+RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -557,6 +557,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &523704827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +669,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 664998178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.243651, y: -0.2696457, z: 1.767663}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -693,6 +698,7 @@ GameObject:
   - component: {fileID: 901250578}
   - component: {fileID: 901250581}
   - component: {fileID: 901250580}
+  - component: {fileID: 901250582}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -786,14 +792,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2ced164c1750e468aa23b72501df7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nick: Lucas
-  life: 50
-  mana: 15
+  nick: Leonardo
+  life: 20
+  mana: 18
   currentLife: 0
   currentMana: 0
-  attack: 15
-  defense: 30
-  velocity: 25
+  attack: 2147483647
+  defense: 21
+  velocity: 20
   physicistsAttacks:
   - {fileID: 1472405721938206, guid: 779c694f68d400c4d9703895acc38659, type: 2}
   magicalAttacks:
@@ -801,6 +807,141 @@ MonoBehaviour:
   - {fileID: 1259403119279454, guid: 27ce524438803b8459d24bd760a36f72, type: 2}
   especial:
   - {fileID: 1252674540822546, guid: ec2d8af227d55174e84cd4570fb30f8c, type: 2}
+--- !u!114 &901250582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901250577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0c94bdb9c5a9f46af3976a32b95c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1100525601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1100525603}
+  - component: {fileID: 1100525602}
+  - component: {fileID: 1100525604}
+  m_Layer: 0
+  m_Name: SoundEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1100525602
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1100525601}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.225
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &1100525603
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1100525601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100525604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1100525601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585f2791cfe8a4f4ba34f1b9cf977f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aceptSound: {fileID: 8300000, guid: 5bc3db5862e623b429d5123ff0e1147c, type: 3}
+  cancelSound: {fileID: 8300000, guid: 37bfc329ae7e0184593984e399760550, type: 3}
+  moveSound: {fileID: 8300000, guid: 63b10758dc46cb849bbe78aee09cf288, type: 3}
 --- !u!1 &1147421369
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +1111,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198339297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26333332, y: -1.9566667, z: -2}
+  m_LocalPosition: {x: -0.26333332, y: -1.9566667, z: -3}
   m_LocalScale: {x: 0.5, y: 1.3333334, z: 1}
   m_Children: []
   m_Father: {fileID: 901250579}
@@ -1410,6 +1551,7 @@ GameObject:
   - component: {fileID: 1664815470}
   - component: {fileID: 1664815472}
   - component: {fileID: 1664815473}
+  - component: {fileID: 1664815474}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1486,12 +1628,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2ced164c1750e468aa23b72501df7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nick: Hope
-  life: 200
-  mana: 100
+  nick: Mama
+  life: 100
+  mana: 25
   currentLife: 0
   currentMana: 0
-  attack: 10
+  attack: 20
   defense: 20
   velocity: 20
   physicistsAttacks:
@@ -1517,6 +1659,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1664815474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1664815469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad67450218e4e1f4b8f2101fa4b29923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoge: {fileID: 1167083770742654, guid: da20c96d440e6f449ad8e2937500263e, type: 2}
 --- !u!1 &1704232162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1812,7 @@ GameObject:
   - component: {fileID: 1727287004}
   - component: {fileID: 1727287008}
   - component: {fileID: 1727287006}
+  - component: {fileID: 1727287007}
   m_Layer: 0
   m_Name: Partner
   m_TagString: Player
@@ -1740,6 +1895,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1727287007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727287003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54efa03a0cb55547abca32c658ad061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1727287008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,14 +1917,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2ced164c1750e468aa23b72501df7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nick: Wolfer
-  life: 35
-  mana: 25
+  nick: Ponzio
+  life: 19
+  mana: 21
   currentLife: 0
   currentMana: 0
-  attack: 30
-  defense: 5
-  velocity: 15
+  attack: 21
+  defense: 19
+  velocity: 25
   physicistsAttacks:
   - {fileID: 1866118133078510, guid: 1d4eb85184462fd4b8ce1248db7b5996, type: 2}
   - {fileID: 1181431367273558, guid: 0c80d2ccc61516842a3dda0542ed7d53, type: 2}

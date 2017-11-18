@@ -1,27 +1,25 @@
-﻿#pragma strict
+﻿/*#pragma strict
 
 public var effect: int;
 public var cost: int;
 
 public var pj: GameObject;
-public var players: GameObject[];
-public var healingPrefab: GameObject;
+public var benefited: GameObject;
+public var defensePrefab: GameObject;
 
-private var endDefense: boolean;
+private var endAttack: boolean;
 
 function Start () {
-	endDefense = false;
+	endAttack = false;
 }
 
 function Update () {
-	if(!endDefense){
-		endDefense = true;
+	if(!endAttack){
+		endAttack = true;
+		var danio = new Damage().calculate(aggressor.GetComponent(Stats),enemy,damage,cost,hitProbability);
 
-		for(var player in players){
-			var heal = new Heal().calculate(pj.GetComponent(Stats),player.GetComponent(Stats),effect,cost);
-
-			var healFeedBack = Instantiate(healingPrefab,player.transform.position - new Vector3(0,0,1),player.transform.rotation);
-			healFeedBack.GetComponent(TextMesh).text = heal;
-		}
+		var damageFeedBack = Instantiate(damagePrefab,enemy.transform.position - new Vector3(0,0,1),enemy.transform.rotation);
+		damageFeedBack.GetComponent(TextMesh).text = danio;
 	}
 }
+*/

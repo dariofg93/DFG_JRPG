@@ -171,6 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9582bb68b43acc240bb0138842a86ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aceptSound: {fileID: 8300000, guid: 5bc3db5862e623b429d5123ff0e1147c, type: 3}
+  cancelSound: {fileID: 8300000, guid: 73694b14919b6d54abcd13b2aa7fafd9, type: 3}
+  moveSound: {fileID: 8300000, guid: 63b10758dc46cb849bbe78aee09cf288, type: 3}
   selected: 0
   changedOption: 0
 --- !u!114 &114356925757668028
@@ -186,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pj: {fileID: 0}
   pos: 0
+  playersController: {fileID: 0}
   isOptions: 0
 --- !u!212 &212414260574065544
 SpriteRenderer:

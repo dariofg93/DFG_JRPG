@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4dd093059627a4586d87adc5437b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 13
   cost: 0
   hitProbability: 100
   enemy: {fileID: 0}

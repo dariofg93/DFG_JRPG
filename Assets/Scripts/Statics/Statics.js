@@ -86,8 +86,8 @@ public static function hasEnoughMana(pj: GameObject, action: GameObject){
 		totalCost = action.GetComponent(AttackMany).cost;
 	}
 
-	if(action.GetComponent(Defense) != null){
-		totalCost = action.GetComponent(Defense).cost;
+	if(action.GetComponent(Healing) != null){
+		totalCost = action.GetComponent(Healing).cost;
 	}
 
 	return pj.GetComponent(Stats).currentMana >= totalCost;
@@ -95,4 +95,8 @@ public static function hasEnoughMana(pj: GameObject, action: GameObject){
 
 public static function introductionScreen(){
 	return GameObject.Find("IntroductionScreen");
+}
+
+public static function soundEffect(){
+	return GameObject.Find("SoundEffect");
 }

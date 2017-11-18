@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1252674540822546}
+  m_RootGameObject: {fileID: 1242020752721736}
   m_IsPrefabParent: 1
---- !u!1 &1252674540822546
+--- !u!1 &1242020752721736
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4954278122095188}
-  - component: {fileID: 114382983923766698}
-  - component: {fileID: 114339749520351456}
+  - component: {fileID: 4263257765874264}
+  - component: {fileID: 114265467301858200}
+  - component: {fileID: 114171782409461338}
   m_Layer: 0
-  m_Name: PlayerInventory1
+  m_Name: Lluvia electrica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4954278122095188
+--- !u!4 &4263257765874264
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252674540822546}
+  m_GameObject: {fileID: 1242020752721736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,31 +41,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114339749520351456
+--- !u!114 &114171782409461338
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252674540822546}
+  m_GameObject: {fileID: 1242020752721736}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9501e9ffad7e58840a1f34f4b0a2f1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 2
---- !u!114 &114382983923766698
+--- !u!114 &114265467301858200
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252674540822546}
+  m_GameObject: {fileID: 1242020752721736}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe4dd093059627a4586d87adc5437b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 75
-  cost: 0
-  hitProbability: 90
+  damage: 10
+  cost: 3
+  hitProbability: 75
   enemy: {fileID: 0}
   aggressor: {fileID: 0}
+  damagePrefab: {fileID: 0}
